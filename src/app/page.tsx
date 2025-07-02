@@ -48,6 +48,19 @@ const PhoneIcon = () => (
     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
   </svg>
 )
+
+const MenuIcon = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+)
+
+const CloseIcon = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  </svg>
+)
+
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ParticleField } from '@/components/ui/particle-field'
@@ -86,6 +99,8 @@ export default function Home() {
     message: ''
   })
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // Ici on pourrait intégrer avec un service d'email ou Calendly
@@ -93,8 +108,104 @@ export default function Home() {
     alert('Merci ! Je vous recontacte sous 24h.')
   }
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsMenuOpen(false)
+  }
+
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-white border-opacity-10">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <motion.div
+              className="text-lg font-medium tracking-tighter"
+              whileHover={{ scale: 1.05 }}
+            >
+              Rayane Rachid
+            </motion.div>
+
+            {/* Navigation Desktop */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <button 
+                onClick={() => scrollToSection('process')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+              >
+                Process
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+              >
+                Portfolio
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+              >
+                Tarifs
+              </button>
+              <motion.button
+                onClick={() => scrollToSection('contact')}
+                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact
+              </motion.button>
+            </nav>
+
+            {/* Menu Mobile */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+            </button>
+          </div>
+
+          {/* Menu Mobile Déroulant */}
+          <motion.div
+            className={`md:hidden overflow-hidden ${isMenuOpen ? 'mt-4' : ''}`}
+            initial={false}
+            animate={{ height: isMenuOpen ? 'auto' : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav className="flex flex-col space-y-4 py-4 border-t border-white border-opacity-10">
+              <button 
+                onClick={() => scrollToSection('process')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 text-left"
+              >
+                Process
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 text-left"
+              >
+                Portfolio
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')}
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 text-left"
+              >
+                Tarifs
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300 w-fit"
+              >
+                Contact
+              </button>
+            </nav>
+          </motion.div>
+        </div>
+      </header>
+
       {/* Animated Background */}
       <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
@@ -318,7 +429,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section className="py-20 relative">
+      <section id="process" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-xl font-medium tracking-tighter leading-tight mb-12 text-center">
             Mon process en 3 étapes
@@ -370,7 +481,7 @@ export default function Home() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 relative">
+      <section id="portfolio" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-xl font-medium tracking-tighter leading-tight mb-12 text-center">
             Ce que disent mes clients
@@ -420,7 +531,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 relative">
+      <section id="pricing" className="py-20 relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-xl font-medium tracking-tighter leading-tight mb-6">
             Une offre simple et transparente
@@ -504,7 +615,7 @@ export default function Home() {
                   placeholder="Votre nom"
                   value={formData.name}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({...formData, name: e.target.value})}
-                  className="w-full p-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded text-white placeholder-neutral-400 focus:outline-none focus:border-opacity-40"
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 rounded-lg text-white text-xs placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30"
                   required
                 />
                 <input
@@ -512,7 +623,7 @@ export default function Home() {
                   placeholder="Votre email"
                   value={formData.email}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({...formData, email: e.target.value})}
-                  className="w-full p-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded text-white placeholder-neutral-400 focus:outline-none focus:border-opacity-40"
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 rounded-lg text-white text-xs placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30"
                   required
                 />
                 <input
@@ -520,7 +631,7 @@ export default function Home() {
                   placeholder="Type de projet (ex: marketplace, SaaS...)"
                   value={formData.project}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({...formData, project: e.target.value})}
-                  className="w-full p-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded text-white placeholder-neutral-400 focus:outline-none focus:border-opacity-40"
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 rounded-lg text-white text-xs placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30"
                   required
                 />
                 <textarea
@@ -528,15 +639,17 @@ export default function Home() {
                   value={formData.message}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData({...formData, message: e.target.value})}
                   rows={4}
-                  className="w-full p-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded text-white placeholder-neutral-400 focus:outline-none focus:border-opacity-40"
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 rounded-lg text-white text-xs placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30"
                   required
                 />
-                <button
+                <motion.button
                   type="submit"
                   className="w-full px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   Envoyer ma demande
-                </button>
+                </motion.button>
               </form>
             </div>
 
@@ -547,10 +660,14 @@ export default function Home() {
                 <p className="text-neutral-300 text-sm mb-4">
                   Accès direct à mon calendrier pour un appel gratuit de 15 minutes.
                 </p>
-                <button className="w-full px-8 py-3 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 flex items-center justify-center space-x-2">
+                <motion.button 
+                  className="w-full px-8 py-3 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 flex items-center justify-center space-x-2 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <CalendarIcon />
                   <span>Calendly - Appel gratuit</span>
-                </button>
+                </motion.button>
               </div>
 
               <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
