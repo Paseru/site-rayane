@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# DESIGN SYSTEM - Minimal Studio
+
+ALWAYS use this exact styling:
+
+## COLORS:
+- Background: bg-black text-white only
+- Glass effects: bg-white bg-opacity-10 backdrop-blur-md
+- Borders: border border-white border-opacity-20
+- Text: white primary, text-neutral-300 secondary
+
+## TYPOGRAPHY:
+- Font: Inter only (font-sans)
+- Headings: font-medium tracking-tighter leading-tight
+- Body text: font-light ou font-normal
+- Sizes: text-xs, text-sm, text-lg, text-xl, text-4xl md:text-6xl
+
+## BUTTONS:
+- Primary: px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg
+- Secondary: px-8 py-3 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20
+
+## INPUTS:
+- Base: px-4 py-2 bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-20 rounded-lg text-white text-xs placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30
+- Font size: text-xs (small), text-sm (medium)
+
+## SPACING:
+- Sections: pt-32 pb-32 md:pt-40 md:pb-40
+- Containers: max-w-4xl centered
+- Gaps: gap-4, space-x-6
+- Margins: mt-6, mt-12, mt-20
+
+## EFFECTS:
+- Cards: bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10
+- Shadows: shadow-xl, shadow-2xl
+- Blur orbs: w-[600px] h-[600px] bg-white opacity-5 blur-[100px] rounded-full
+
+NEVER use other colors, fonts, or styles. Stick to this system exactly.
