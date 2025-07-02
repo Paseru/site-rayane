@@ -177,7 +177,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeUp delay={0.25}>
             <h1 className="text-4xl md:text-6xl font-medium tracking-tighter leading-tight mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Votre idée mérite d'exister.<br />
+              Votre idée mérite d&apos;exister.<br />
               <span className="text-neutral-300 drop-shadow-lg">Je la transforme en MVP en 1 semaine.</span>
             </h1>
           </FadeUp>
@@ -275,7 +275,7 @@ export default function Home() {
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                  >• Vous voulez valider avant d'investir massivement</motion.p>
+                  >• Vous voulez valider avant d&apos;investir massivement</motion.p>
                 </motion.div>
               </div>
             </FadeUp>
@@ -341,7 +341,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-medium mb-4">2. Développement</h3>
               <p className="text-neutral-300 text-sm">
-                6 jours de développement intensif avec points quotidiens. Vous suivez l'avancement en temps réel sur un environnement de test.
+                6 jours de développement intensif avec points quotidiens. Vous suivez l&apos;avancement en temps réel sur un environnement de test.
               </p>
             </div>
             
@@ -351,7 +351,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-medium mb-4">3. Lancement</h3>
               <p className="text-neutral-300 text-sm">
-                Mise en ligne, formation à l'utilisation et accompagnement pendant 1 mois pour les ajustements mineurs.
+                Mise en ligne, formation à l&apos;utilisation et accompagnement pendant 1 mois pour les ajustements mineurs.
               </p>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
               <p className="text-neutral-300 mb-4">
-                "J'avais cette idée d'app depuis 2 ans. Rayane l'a rendue réelle en 1 semaine. Le MVP nous a permis de lever 50k€ en pré-seed."
+                &ldquo;J&apos;avais cette idée d&apos;app depuis 2 ans. Rayane l&apos;a rendue réelle en 1 semaine. Le MVP nous a permis de lever 50k€ en pré-seed.&rdquo;
               </p>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full"></div>
@@ -392,7 +392,7 @@ export default function Home() {
             
             <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
               <p className="text-neutral-300 mb-4">
-                "Efficacité incroyable. En 1 semaine j'avais mon MVP, en 1 mois mes premiers clients payants. ROI immédiat."
+                &ldquo;Efficacité incroyable. En 1 semaine j&apos;avais mon MVP, en 1 mois mes premiers clients payants. ROI immédiat.&rdquo;
               </p>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full"></div>
@@ -490,7 +490,7 @@ export default function Home() {
               Prêt à transformer votre idée ?
             </h2>
             <p className="text-neutral-300 max-w-lg mx-auto">
-              Discutons de votre projet lors d'un appel gratuit de 15 minutes. Pas de pitch commercial, juste une conversation pour voir si je peux vous aider.
+              Discutons de votre projet lors d&apos;un appel gratuit de 15 minutes. Pas de pitch commercial, juste une conversation pour voir si je peux vous aider.
             </p>
           </div>
 
