@@ -119,12 +119,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-white border-opacity-10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-10 backdrop-blur-md border-b border-white border-opacity-20 shadow-xl">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div
-              className="text-lg font-medium tracking-tighter"
+              className="text-lg font-medium tracking-tighter bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent"
               whileHover={{ scale: 1.05 }}
             >
               Rayane Rachid
@@ -134,25 +134,25 @@ export default function Home() {
             <nav className="hidden md:flex items-center space-x-6">
               <button 
                 onClick={() => scrollToSection('process')}
-                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 backdrop-blur-sm"
               >
                 Process
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 backdrop-blur-sm"
               >
                 Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
-                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300"
+                className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 backdrop-blur-sm"
               >
                 Tarifs
               </button>
               <motion.button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300"
+                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-md text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -197,7 +197,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-sm text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300 w-fit"
+                className="px-6 py-2 bg-white bg-opacity-10 backdrop-blur-md text-white font-medium rounded-full hover:bg-opacity-20 border border-white border-opacity-20 text-sm transition-all duration-300 w-fit shadow-lg"
               >
                 Contact
               </button>
@@ -294,9 +294,11 @@ export default function Home() {
           </FadeUp>
           
           <FadeUp delay={0.5}>
-            <p className="text-lg text-neutral-300 mb-12 max-w-2xl mx-auto backdrop-blur-sm">
-              Développeur solo spécialisé dans les prototypes rapides. Je transforme votre concept en application fonctionnelle, prête à valider votre marché.
-            </p>
+            <div className="bg-white bg-opacity-5 backdrop-blur-md rounded-lg border border-white border-opacity-10 p-6 max-w-2xl mx-auto mb-12 shadow-lg">
+              <p className="text-lg text-neutral-300">
+                Développeur solo spécialisé dans les prototypes rapides. Je transforme votre concept en application fonctionnelle, prête à valider votre marché.
+              </p>
+            </div>
           </FadeUp>
 
           <FadeUp delay={0.75}>
@@ -328,13 +330,13 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 aspect-video max-w-2xl mx-auto flex items-center justify-center group cursor-pointer hover:bg-opacity-10 transition-all duration-300 shadow-2xl hover:shadow-white/10">
+              <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 aspect-video max-w-2xl mx-auto flex items-center justify-center group cursor-pointer hover:bg-opacity-15 transition-all duration-300 shadow-2xl hover:shadow-white/20">
                 <motion.div 
                   className="flex items-center space-x-4"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-16 h-16 bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                  <div className="w-16 h-16 bg-white bg-opacity-15 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-opacity-25 transition-all duration-300 border border-white border-opacity-20 shadow-lg">
                     <PlayIcon />
                   </div>
                   <span className="text-lg font-medium">Découvrir mon approche</span>
@@ -393,30 +395,30 @@ export default function Home() {
             
             <FadeUp delay={0.4}>
               <motion.div 
-                className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-8 hover:bg-opacity-10 transition-all duration-300 hover:scale-105"
+                className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-8 hover:bg-opacity-15 transition-all duration-300 hover:scale-105 shadow-xl"
                 whileHover={{
-                  boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.1)"
+                  boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.2)"
                 }}
               >
                 <h3 className="text-lg font-medium mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Mes résultats en chiffres</h3>
                 <div className="space-y-6">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="p-3 rounded-lg hover:bg-white hover:bg-opacity-5 transition-all duration-300"
+                    className="p-3 rounded-lg bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-10 hover:bg-opacity-10 transition-all duration-300 shadow-lg"
                   >
                     <div className="text-xl font-medium text-green-400">47</div>
                     <div className="text-sm text-neutral-300">MVPs développés</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="p-3 rounded-lg hover:bg-white hover:bg-opacity-5 transition-all duration-300"
+                    className="p-3 rounded-lg bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-10 hover:bg-opacity-10 transition-all duration-300 shadow-lg"
                   >
                     <div className="text-xl font-medium text-blue-400">7 jours</div>
                     <div className="text-sm text-neutral-300">Délai moyen</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="p-3 rounded-lg hover:bg-white hover:bg-opacity-5 transition-all duration-300"
+                    className="p-3 rounded-lg bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-10 hover:bg-opacity-10 transition-all duration-300 shadow-lg"
                   >
                     <div className="text-xl font-medium text-purple-400">89%</div>
                     <div className="text-sm text-neutral-300">Clients satisfaits</div>
@@ -437,7 +439,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20">
+              <div className="w-16 h-16 bg-white bg-opacity-15 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20 shadow-lg hover:bg-opacity-20 transition-all duration-300">
                 <ZapIcon />
               </div>
               <h3 className="text-lg font-medium mb-4">1. Idée</h3>
@@ -447,7 +449,7 @@ export default function Home() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20">
+              <div className="w-16 h-16 bg-white bg-opacity-15 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20 shadow-lg hover:bg-opacity-20 transition-all duration-300">
                 <ClockIcon />
               </div>
               <h3 className="text-lg font-medium mb-4">2. Développement</h3>
@@ -457,7 +459,7 @@ export default function Home() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20">
+              <div className="w-16 h-16 bg-white bg-opacity-15 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white border-opacity-20 shadow-lg hover:bg-opacity-20 transition-all duration-300">
                 <UsersIcon />
               </div>
               <h3 className="text-lg font-medium mb-4">3. Lancement</h3>
@@ -488,7 +490,7 @@ export default function Home() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
+            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-6 shadow-xl hover:bg-opacity-15 transition-all duration-300">
               <p className="text-neutral-300 mb-4">
                 &ldquo;J&apos;avais cette idée d&apos;app depuis 2 ans. Rayane l&apos;a rendue réelle en 1 semaine. Le MVP nous a permis de lever 50k€ en pré-seed.&rdquo;
               </p>
@@ -501,7 +503,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
+            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-6 shadow-xl hover:bg-opacity-15 transition-all duration-300">
               <p className="text-neutral-300 mb-4">
                 &ldquo;Efficacité incroyable. En 1 semaine j&apos;avais mon MVP, en 1 mois mes premiers clients payants. ROI immédiat.&rdquo;
               </p>
@@ -520,8 +522,8 @@ export default function Home() {
             <h3 className="text-lg font-medium mb-8 text-center">Quelques MVPs récents</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {['EcoTrack', 'TaskFlow', 'MentorMatch', 'LocalEats'].map((project, index) => (
-                <div key={index} className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-4 text-center">
-                  <div className="w-full h-20 bg-white bg-opacity-10 rounded mb-3"></div>
+                <div key={index} className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-4 text-center shadow-lg hover:bg-opacity-15 transition-all duration-300 hover:scale-105">
+                  <div className="w-full h-20 bg-white bg-opacity-15 backdrop-blur-sm rounded mb-3"></div>
                   <div className="text-sm font-medium">{project}</div>
                 </div>
               ))}
@@ -537,7 +539,7 @@ export default function Home() {
             Une offre simple et transparente
           </h2>
           
-          <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-8 max-w-lg mx-auto mb-12">
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-8 max-w-lg mx-auto mb-12 shadow-2xl hover:bg-opacity-15 transition-all duration-300">
             <div className="text-4xl font-medium mb-2">1 000€</div>
             <div className="text-lg mb-6">MVP complet en 1 semaine</div>
             
@@ -607,7 +609,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Formulaire */}
-            <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
+            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-6 shadow-xl">
               <h3 className="font-medium mb-6">Parlez-moi de votre projet</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
@@ -655,7 +657,7 @@ export default function Home() {
 
             {/* Contact rapide */}
             <div className="space-y-6">
-              <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
+              <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-6 shadow-xl">
                 <h3 className="font-medium mb-4">Réservez directement un créneau</h3>
                 <p className="text-neutral-300 text-sm mb-4">
                   Accès direct à mon calendrier pour un appel gratuit de 15 minutes.
@@ -670,7 +672,7 @@ export default function Home() {
                 </motion.button>
               </div>
 
-              <div className="bg-white bg-opacity-5 backdrop-blur-sm rounded-lg border border-white border-opacity-10 p-6">
+              <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-white border-opacity-20 p-6 shadow-xl">
                 <h3 className="font-medium mb-4">Contact direct</h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-sm">
